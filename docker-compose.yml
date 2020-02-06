@@ -13,6 +13,7 @@ services:
       volumes:
         - dbdata:/dbdata
         - downloads:/downloads
+       #- ./sparql_queries.py:/usr/src/app/same_thing/sparql_queries.py
       command: ["python" , "-m", "same_thing.loader"]
       tty: true
 

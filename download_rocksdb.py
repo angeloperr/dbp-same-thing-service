@@ -11,8 +11,10 @@ od = OpenerDirector()
 od.add_handler(HTTPSHandler())
 od.add_handler(HTTPRedirectHandler())
 
-resp = od.open(f'{REPO_URL}/releases/latest/download/')
-tag_name = resp.headers['location'].split('/')[-1]
+# resp = od.open(f'{REPO_URL}/releases/latest/download/')
+# tag_name = resp.headers['location'].split('/')[-1]
+
+tag_name = 'v6.0.1' # currently working (2021-02-08)
 
 release_url = f'{REPO_URL}/archive/{tag_name}.tar.gz'
 file_path, headers = urlretrieve(release_url, f'{download_dir}/latest.tar.gz')
